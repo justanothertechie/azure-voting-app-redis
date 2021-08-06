@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myakscluster-c0ac"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myakscluster-c0ac"
+  template:
+    metadata:
+      labels:
+        app: "myakscluster-c0ac"
+    spec:
+      containers:
+        - name: "myakscluster-c0ac"
+          image: "votingaks.azurecr.io/myakscluster"
+          ports:
+          - containerPort: 80
